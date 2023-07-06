@@ -9,6 +9,7 @@
 <body>
     <h1>This is students page</h1>
     <a href="{{route('xem_diem')}}">Xem Diem</a>
+    <a href="{{route('xem_thong_tin')}}">Xem Thong Tin</a>
     <a href="{{route('gui_phan_hoi')}}">Phan hoi</a>
     <a href="{{route('gui_phuc_khao')}}">Phuc khao</a>
 </body>

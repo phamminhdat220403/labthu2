@@ -19,11 +19,24 @@ class StudentController extends Controller
         //dd($student);
         return view('hocsinh.view_score', compact('student', 'results'));
     }
-    public function sent_feedback(){
+
+    public function view_info(){
 
     }
 
-    public function sent_appeal(){
-        
+    public function send_feedbacks(){
+
+    }
+
+    public function send_appeal(Request $request){
+        $studentId = $request->input('student_id');
+        $examName = $request->input('exam_name');
+        $reason = $request->input('reason');
+
+        // Lưu phúc khảo vào cơ sở dữ liệu
+        DB::insert("INSERT INTO appeals (appeal_student_id, appeal_exam_id, appeal_reason) VALUES (?, ?, ?)", [$studentId, $examName, $reason]);
+
+        return view('hocsinh.sent_appeal')->with('success', 'Phúc khảo đã được gửi thành công.');
+    
     }
 }

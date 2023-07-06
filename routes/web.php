@@ -21,7 +21,9 @@ Route::get('/hocsinh',function() {
 });
 Route::get('/hocsinh/xem_diem',[StudentController::class,'view_score'])->name('xem_diem');
 
-Route::get('/hocsinh/gui_phan_hoi',[StudentController::class,'sent_feedbacks'])->name('gui_phan_hoi'); 
+Route::get('/hocsinh/xem_thong_tin',[StudentController::class,'view_info'])->name('xem_thong_tin');
+
+Route::get('/hocsinh/gui_phan_hoi',[StudentController::class,'send_feedbacks'])->name('gui_phan_hoi'); 
 
 Route::get('/hocsinh/phuc_khao',[StudentController::class,'send_appeal'])->name('gui_phuc_khao');
 

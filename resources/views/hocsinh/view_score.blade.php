@@ -19,7 +19,8 @@
                 <tr>
                     <td>Học sinh: {{$student->student_name}}</td>
                 </tr>
-            @endforeach
+    @endforeach
+    
     @if (count($results) > 0)
     <table>
         <thead>
