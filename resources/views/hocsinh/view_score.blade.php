@@ -7,7 +7,7 @@
     <a href="{{route('hs_begin')}}">Back</a>
     <h1>Xem Điểm</h1>
     <!-- Form nhập student_id -->
-<form action="{{ route('xem_diem') }}" method="POST">
+<form action="{{ route('xem_diem') }}" method="HEAD">
     @csrf
     <label for="student_id">Mã học sinh:</label>
     <input type="text" name="student_id" id="student_id">

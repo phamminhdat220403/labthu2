@@ -34,7 +34,7 @@ CREATE TABLE Appeals (
 CREATE TABLE feedbacks (
     id INT  AUTO_INCREMENT PRIMARY KEY,
     student_id INT,
-    info_edit VARCHAR(50),
+    --info_edit VARCHAR(50),
     content TEXT,
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
