@@ -4,8 +4,10 @@
     <title>Xem Điểm</title>
 </head>
 <body>
+    <a href="{{route('hs_begin')}}">Back</a>
+    <h1>Xem Điểm</h1>
     <!-- Form nhập student_id -->
-<form action="{{ route('xem_diem') }}" method="HEAD">
+<form action="{{ route('xem_diem') }}" method="POST">
     @csrf
     <label for="student_id">Mã học sinh:</label>
     <input type="text" name="student_id" id="student_id">
@@ -13,8 +15,19 @@
 </form>
 
 <!-- Hiển thị kết quả -->
-@if (isset($student))
-    <h1>Xem Điểm</h1>
+{{-- @if (isset($student))
+    
+@endif --}}
+
+@if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error )
+            <p>
+                {{$error}}
+            </p>
+        @endforeach
+    </div>
+@else
     @foreach ($student as $student)
                 <tr>
                     <td>Học sinh: {{$student->student_name}}</td>
@@ -38,9 +51,9 @@
             @endforeach
         </tbody>
     </table>
-    @else
-    <p>Không có kết quả hoc tập.</p>
     @endif
+
 @endif
+
 </body>
 </html>

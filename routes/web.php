@@ -18,7 +18,7 @@ use App\Http\Controllers\TeacherController;
 
 Route::get('/hocsinh',function() {
     return view('hocsinh.begin');
-});
+})->name('hs_begin');
 Route::get('/hocsinh/xem_diem',[StudentController::class,'view_score'])->name('xem_diem');
 
 Route::get('/hocsinh/xem_thong_tin',[StudentController::class,'view_info'])->name('xem_thong_tin');

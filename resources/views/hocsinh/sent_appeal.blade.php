@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-
+    <a href="{{route('hs_begin')}}">Back</a>
+    <h1>Trang phuc khao</h1>
     <form method="GET" action="{{ route('gui_phuc_khao') }}">
         @csrf
         <div>
@@ -15,7 +16,7 @@
             <input type="text" name="student_id" id="student_id">
         </div>
         <div>
-            <label for="exam_id">Exam Name:</label>
+            <label for="exam_id">Exam ID:</label>
             <input type="text" name="exam_id" id="exam_id">
         </div>
         <div>
@@ -24,6 +25,14 @@
         </div>
         <button type="submit">Submit</button>
     </form>
-
+    @if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error )
+            <p>
+                {{$error}}
+            </p>
+        @endforeach
+    </div>
+    @endif
 </body>
 </html>

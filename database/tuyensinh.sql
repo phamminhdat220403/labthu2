@@ -24,16 +24,17 @@ CREATE TABLE Results (
 );
 
 CREATE TABLE Appeals (
-  appeal_id INT AUTO_INCREMENT PRIMARY KEY,
   appeal_student_id INT,
   appeal_exam_id INT,
   appeal_reason TEXT,
+  PRIMARY kEY(appeal_student_id,appeal_exam_id),
   FOREIGN KEY (appeal_student_id) REFERENCES Students(student_id),
   FOREIGN KEY (appeal_exam_id) REFERENCES Exams(exam_id)
 ); --appeal_status ENUM('Chờ xử lý', 'Đã xử lý'),
 CREATE TABLE feedbacks (
     id INT  AUTO_INCREMENT PRIMARY KEY,
     student_id INT,
+    info_edit VARCHAR(50),
     content TEXT,
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
@@ -54,6 +55,7 @@ VALUES
 (1, 'John Doe', 'johndoe@example.com', '2003-08-10', 'Nam', '123 Main St, City A'),
 (2, 'Jane Smith', 'janesmith@example.com', '2003-03-15', 'Nữ', '456 Elm St, City B'),
 (3, 'Michael Lee', 'michaellee@example.com', '2003-11-20', 'Nam', '789 Oak St, City C');
+(4, 'Bùi Tá Đức', 'Ducbt@example.com', '2003-11-20', 'Nam', '789 Oak St, lò chum');
 
 INSERT INTO Results (result_id, result_student_id, result_exam_id, result_score)
 VALUES
